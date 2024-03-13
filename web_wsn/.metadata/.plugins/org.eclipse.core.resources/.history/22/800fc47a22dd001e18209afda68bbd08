@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+
+.wrap{
+   width:300px;
+   height: 300px;
+   /*border:1px solid black;*/   
+   border-radius: 50%;   
+   
+   background-image:  url("https://modo-phinf.pstatic.net/20180205_181/1517797750367kO6I1_JPEG/mosa403YQX.jpeg?type=f353_353");
+   margin: 0 auto;
+}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+</div>
+</body>
+</html>

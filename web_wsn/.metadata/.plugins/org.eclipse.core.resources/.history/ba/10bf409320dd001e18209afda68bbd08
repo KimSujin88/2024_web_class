@@ -1,0 +1,79 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@  page import="java.sql.*" %> 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+table{
+ border:1px solid black;
+}
+
+td{
+border:1px solid black;
+}
+</style>
+</head>
+<body>
+
+
+<table>
+
+<tr>
+<td>아이디</td>
+<td>비번</td>
+<td>이름</td>
+</tr>
+
+
+<%
+String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@localhost:1521:testdb";
+		String user = "scott";
+		String password = "tiger";	
+		
+				
+		try {
+			//1. 드라이버 로드 (객체생성)
+			Class.forName(driver);			
+			//2. 데이터베이스 연결
+			Connection  con = DriverManager.getConnection(url, user, password);
+			
+			//3. 문장얻어오기 
+			 
+			String sql  ="select * from  acorntbl  ";
+			PreparedStatement  pst =con.prepareStatement(sql);
+		 
+			
+			//5.실행 ( executeQuery()-조회,  executeUpdate()- 나머지 등록, 변경, 삭제)
+			ResultSet  rs =pst.executeQuery();	
+			
+			//
+			while( rs.next()) {
+			
+			%>
+			<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			</tr>
+			
+			<%
+	} 			
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			%>
+
+
+</table>
+</body>
+</html>

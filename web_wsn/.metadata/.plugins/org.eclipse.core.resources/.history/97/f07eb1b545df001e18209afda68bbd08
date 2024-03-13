@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+.wrap{
+	width:430px;
+	border:1px solid black;
+	padding:200px;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div></div>
+<div></div>
+
+</div>
+
+</body>
+</html>

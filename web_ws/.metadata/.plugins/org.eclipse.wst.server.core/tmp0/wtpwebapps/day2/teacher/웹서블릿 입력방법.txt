@@ -1,0 +1,6 @@
+http://localhost:8080/day1/ex01?su1=10&su2=8
+
+@WebServlet("/ex01")
+ex01?su1=10&su2=8
+
+name 입력 + ? + su1 + & + su2 

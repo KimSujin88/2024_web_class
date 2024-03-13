@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+
+function check(){
+	//alert("dfsfdssdfdf")
+	let frm = document.frm;
+	//alert(frm);
+	
+	let gender = frm.dender;
+	//alert(gender.length);
+	
+	alert(gender[0].checked);
+	let falg=false;
+	for(let i=0; i< gender.length; i++){
+		if(gender[i].checked){}
+	   }
+	}
+
+</script>
+</head>
+<body>
+
+<form name="frm" action="radio_action.jsp"  method="post" >
+	
+		<label><input type="radio" value="M" name="gender">남성</label>
+        <label><input type="radio" value="W" name="gender">여성</label>
+        <label><input type="radio" value="O" name="gender">기타</label>        
+		<button type="button" onclick="check();">전송</button>
+	</form>
+
+</body>
+</html>

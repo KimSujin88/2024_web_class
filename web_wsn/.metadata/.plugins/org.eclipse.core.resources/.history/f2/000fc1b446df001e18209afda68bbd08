@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+.wrap{
+	width:100px;
+	border:1px solid black;
+	padding:200px;
+}
+
+.img_wrap{
+	width:200px;
+	height:200px;
+	margin-botton:100px;
+	border:1px solid black;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+	<div class="img_wrap"></div>
+	<div></div>
+
+</div>
+
+</body>
+</html>
