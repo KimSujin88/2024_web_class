@@ -18,7 +18,7 @@ public class FoodServlet extends HttpServlet {
 		resp.setCharacterEncoding("utf-8");
 		resp.setContentType("text/html;charset=utf-8");
 		PrintWriter  out = resp.getWriter();
-		out.println("스파게티 ");
+		out.println("볶음밥 스파게티 ");
 		
 	}
 

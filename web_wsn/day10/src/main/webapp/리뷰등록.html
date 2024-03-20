@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+
+<script>
+function regReview(){
+	//alert("djkfdkfkf");
+	
+	let content  =$("#content").val();
+	alert(content);
+	
+	let review ={
+			id: "5",
+			content : content			
+	}
+	
+	let reviewStr =  JSON.stringify( review);
+	
+	console.log( review);
+	console.log( reviewStr); //" {id: "5", content: "정말"}"
+	
+	
+	
+	 
+	$.ajax(
+			{
+			  type:"post",
+			  url: "/day10/regReview",
+			  contentType:"application/json",
+			  data: reviewStr,
+			  success: function(data){
+				  console.log(data);
+			  },
+			  error: function(err){
+				  console.log( err);
+			  }
+			  
+			  
+			}
+		);
+	  
+}
+
+</script>
+
+</head>
+<body>
+
+ 
+
+
+<input type="text"  id="content"> <button  onclick="regReview()">리뷰등록</button>
+</body>
+</html>

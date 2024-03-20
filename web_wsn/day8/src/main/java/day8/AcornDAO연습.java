@@ -2,8 +2,11 @@ package day8;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class AcornDAO연습 {
 
@@ -20,7 +23,6 @@ public class AcornDAO연습 {
 		try {
 			Class.forName(driver);
 			con = DriverManager.getConnection(url, user, password);
-			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -29,16 +31,57 @@ public class AcornDAO연습 {
 			e.printStackTrace();
 		}
 		
-		return con;	
+		return con;
+		
 	}
+	
+	
+	//에이콘 학생목록 조회
+	//ArrayList<Acorn> selectAll()
 	
 	public ArrayList<Acorn> selectAll(){
 		
 		Connection con = dbcon();
 		
-		String sql="select * from acorntbl";
+		String sql="select * from acorntbl ";
 		
-		return null;
+		ArrayList<Acorn>  list = new ArrayList();
+		
+		
+		try {
+			PreparedStatement pst = con.prepareStatement(sql);
+			ResultSet rs = pst.executeQuery();
+			
+			while( rs.next()) {
+				
+				String id = rs.getString(1);
+				String pw = rs.getString(2);
+				String name = rs.getString(3);
+				System.out.println(id);
+				
+				
+				Acorn acorn = new Acorn(id, pw, name);
+				list.add(acorn);
+			}
+			
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return list;
 		
 	}
+	
+	public static void main(String[] args) {
+		
+		AcornDAO dao = new AcornDAO();
+		
+		//dao.selectAll();
+		
+		System.out.println(dao.selectAll().get(1).getName());
+	}
+	
 }

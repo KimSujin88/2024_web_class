@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+
+
+function getReviewList(){
+	
+
+	$.ajax(
+			{
+				type:"get",
+				url:"/day10/reviewlist",
+				success:function( data){
+					console.log( data);      //  <ul>  <li> </li>  <li> </li> </ul>
+					
+					let str="<ul>";
+					for( let i=0; i< data.length ; i++){
+						let item  = data[i];
+						str +=   "<li>"  + item.id  +  item.content +   "</li>";
+					}					
+					str +=  "</ul>"
+					
+					//$("#result").html("진짜");
+					$("#result").html(str);
+					//
+					//document.querySelector("#result").innerHTML ="진짜";
+					
+				}
+			});	
+}
+
+
+
+
+</script>
+
+
+<button onclick="getReviewList()"> 리뷰정보</button>
+<div  id="result"></div>
+
+</body>
+</html>
